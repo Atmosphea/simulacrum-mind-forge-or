@@ -1,7 +1,6 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { TrendingUp, ShoppingCart, Car, Presentation, Coffee } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { TrendingUp, ShoppingCart, Car, Presentation, Coffee } from "lucide-react"
 
 const CaseStudies = () => {
   const cases = [
@@ -9,28 +8,31 @@ const CaseStudies = () => {
       icon: <ShoppingCart className="h-6 w-6 text-blue-600" />,
       industry: "E-commerce",
       title: "Premium Coffee Brand Launch",
-      description: "Simulated customer journey through online purchasing decisions for artisanal coffee subscription service.",
+      description:
+        "Simulated customer journey through online purchasing decisions for artisanal coffee subscription service.",
       insights: "Discovered emotional triggers around sustainability messaging increased purchase intent by 40%",
       persona: "The Mindful Consumer",
-      badge: "CPG"
+      badge: "CPG",
     },
     {
       icon: <Car className="h-6 w-6 text-teal-600" />,
       industry: "Automotive",
       title: "EV Adoption Barriers",
-      description: "Deep-dive simulation of family car-buying process exploring electric vehicle hesitations and motivations.",
+      description:
+        "Deep-dive simulation of family car-buying process exploring electric vehicle hesitations and motivations.",
       insights: "Identified charging anxiety as primary concern, leading to targeted infrastructure messaging",
       persona: "The Practical Parent",
-      badge: "Automotive"
+      badge: "Automotive",
     },
     {
       icon: <Presentation className="h-6 w-6 text-purple-600" />,
       industry: "SaaS",
       title: "Enterprise Software Demo",
-      description: "Simulated C-suite executive evaluating project management platform during high-stakes presentation.",
+      description:
+        "Simulated C-suite executive evaluating project management platform during high-stakes presentation.",
       insights: "Revealed decision-makers prioritize integration capabilities over feature complexity",
       persona: "The Strategic Executive",
-      badge: "Enterprise"
+      badge: "Enterprise",
     },
     {
       icon: <Coffee className="h-6 w-6 text-orange-600" />,
@@ -39,9 +41,9 @@ const CaseStudies = () => {
       description: "Traced shopper's internal dialogue navigating health food section with competing brand messages.",
       insights: "Found placement near organic produce increased perceived healthiness by 60%",
       persona: "The Health-Conscious Shopper",
-      badge: "Retail"
-    }
-  ];
+      badge: "Retail",
+    },
+  ]
 
   return (
     <section className="py-20 bg-gray-50">
@@ -53,14 +55,17 @@ const CaseStudies = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how leading brands use Simulacrum to uncover deep consumer insights 
-            and drive meaningful business outcomes across industries.
+            See how leading brands use Simulacrum to uncover deep consumer insights and drive meaningful business
+            outcomes across industries.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {cases.map((study, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/70 backdrop-blur-sm">
+            <Card
+              key={index}
+              className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/70 backdrop-blur-sm"
+            >
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
@@ -68,7 +73,9 @@ const CaseStudies = () => {
                       {study.icon}
                     </div>
                     <div>
-                      <Badge variant="secondary" className="mb-1">{study.badge}</Badge>
+                      <Badge variant="secondary" className="mb-1">
+                        {study.badge}
+                      </Badge>
                       <CardTitle className="text-lg">{study.title}</CardTitle>
                     </div>
                   </div>
@@ -91,7 +98,7 @@ const CaseStudies = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CaseStudies;
+export default CaseStudies

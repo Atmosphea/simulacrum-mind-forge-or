@@ -1,6 +1,5 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Play, ArrowRight, Sparkles } from 'lucide-react';
+import { Button } from "@/components/ui/button"
+import { Play, ArrowRight, Sparkles } from "lucide-react"
 
 const Hero = () => {
   return (
@@ -13,7 +12,7 @@ const Hero = () => {
               Revolutionary Market Research
             </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-teal-900 bg-clip-text text-transparent">
               Externalize
@@ -23,15 +22,17 @@ const Hero = () => {
               Imagination
             </span>
           </h1>
-          
+
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Simulacrum delivers immersive, AI-driven simulations of hyper-specific consumer personas' 
-            internal monologues, decision-making processes, and emotional journeys. Transform how you 
-            understand your customers.
+            Simulacrum delivers immersive, AI-driven simulations of hyper-specific consumer personas' internal
+            monologues, decision-making processes, and emotional journeys. Transform how you understand your customers.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-lg px-8 py-4">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-lg px-8 py-4"
+            >
               Start Free Simulation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -40,7 +41,7 @@ const Hero = () => {
               Watch Demo
             </Button>
           </div>
-          
+
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-200/50 to-teal-200/50 blur-3xl"></div>
             <div className="relative bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 p-8 shadow-2xl">
@@ -63,7 +64,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
