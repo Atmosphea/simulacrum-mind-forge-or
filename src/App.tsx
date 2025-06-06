@@ -1,129 +1,49 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Toaster } from "@/components/ui/toaster"
+import { Toaster as Sonner } from "@/components/ui/sonner"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Index from "./pages/Index"
 import Dashboard from "./pages/Dashboard"
-import Analytics from "./pages/Analytics"
-import Personas from "./pages/Personas"
+import Dashboard2 from "./pages/Dashboard2"
 import Projects from "./pages/Projects"
+import Personas from "./pages/Personas"
+import Analytics from "./pages/Analytics"
+import Search from "./pages/Search"
 import Settings from "./pages/Settings"
 import Profile from "./pages/Profile"
-import Search from "./pages/Search"
 import SetupHub from "./pages/SetupHub"
 import SimulationChamber from "./pages/SimulationChamber"
 import AnalysisPortal from "./pages/AnalysisPortal"
-import Index from "./pages/Index"
 import NotFound from "./pages/NotFound"
-import Pricing from "./pages/Pricing"
-import FAQPage from "./pages/FAQPage"
-import Feedback from "./pages/Feedback"
-import { AuthProvider } from "./components/AuthProvider"
-import ProtectedRoute from "./components/auth/ProtectedRoute"
-import { AnalyticsProvider } from "./components/AnalyticsProvider"
 
-function App() {
-  return (
-    <AuthProvider>
-      <Router>
-        <AnalyticsProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/faq" element={<FAQPage />} />
+const queryClient = new QueryClient()
 
-            {/* Protected Routes */}
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/analytics"
-              element={
-                <ProtectedRoute>
-                  <Analytics />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/personas"
-              element={
-                <ProtectedRoute>
-                  <Personas />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <ProtectedRoute>
-                  <Projects />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/settings"
-              element={
-                <ProtectedRoute>
-                  <Settings />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/search"
-              element={
-                <ProtectedRoute>
-                  <Search />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/setup"
-              element={
-                <ProtectedRoute>
-                  <SetupHub />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/simulation/:id"
-              element={
-                <ProtectedRoute>
-                  <SimulationChamber />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/analysis/:id"
-              element={
-                <ProtectedRoute>
-                  <AnalysisPortal />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/feedback"
-              element={
-                <ProtectedRoute>
-                  <Feedback />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnalyticsProvider>
-      </Router>
-    </AuthProvider>
-  )
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard2" element={<Dashboard2 />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/personas" element={<Personas />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/setup" element={<SetupHub />} />
+          <Route path="/simulation-chamber" element={<SimulationChamber />} />
+          <Route path="/analysis" element={<AnalysisPortal />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+)
 
 export default App
